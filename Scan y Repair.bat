@@ -1,8 +1,11 @@
-@echo Presiona la tecla Enter para relizar un scaner y una restauracion de archivos del sistema
+@echo off
+@echo Welcome, thanks for using my sript
+PAUSE
+@echo Press the Enter key to perform a scan and restore of system files.
 PAUSE
 DISM.exe /online /cleanup-image /restorehealth
 sfc /scannow
-@echo Hecho
+@echo All Done
 PAUSE
 exit
 
