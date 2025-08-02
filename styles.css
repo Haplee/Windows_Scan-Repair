@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
 :root {
-    --bg-color: #1a1a2e;
-    --card-bg-color: #16213e;
-    --primary-color: #0f3460;
-    --secondary-color: #e94560;
-    --text-color: #dcdcdc;
+    --bg-color: #292828;
+    --card-bg-color: #1f232c;
+    --primary-color: #1a1a1a;
+    --secondary-color: #22bd2a;
+    --text-color: #e0e0e0;
     --header-color: #ffffff;
-    --border-color: #e94560;
+    --border-color: #28e73c;
+    --code-bg: #1a1d24;
+    --code-color: #c5d4e3;
+    --hover-color: #14181f;
 }
 
 body {
@@ -34,7 +37,7 @@ body {
 .header h1 {
     color: var(--header-color);
     font-family: 'Roboto Mono', monospace;
-    font-size: 2.5em;
+    font-size: clamp(2rem, 5vw, 2.5rem);
 }
 
 .card {
@@ -42,15 +45,15 @@ body {
     border-radius: 10px;
     padding: 25px;
     margin-bottom: 30px;
-    border: 1px solid var(--primary-color);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     animation: fadeInUp 1s ease-in-out;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(233, 69, 96, 0.3);
+    box-shadow: 0 8px 25px rgba(40, 231, 60, 0.3);
 }
 
 .card h2 {
@@ -59,10 +62,11 @@ body {
     border-bottom: 2px solid var(--border-color);
     padding-bottom: 10px;
     margin-top: 0;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
 }
 
 pre {
-    background-color: #0f1a2b;
+    background-color: var(--code-bg);
     padding: 15px;
     border-radius: 5px;
     overflow-x: auto;
@@ -72,7 +76,7 @@ pre {
 
 code {
     font-family: 'Roboto Mono', monospace;
-    color: #a9b7c6;
+    color: var(--code-color);
     font-size: 0.95em;
 }
 
@@ -121,10 +125,20 @@ code {
 }
 
 #explanation-content li:hover {
-    background-color: #0d2c54;
+    background-color: var(--hover-color);
 }
 
 #explanation-content strong {
     color: var(--secondary-color);
     font-weight: 700;
+}
+
+/* Accesibilidad: Estilos de foco */
+a:focus,
+button:focus,
+input:focus,
+.card:focus,
+#explanation-content li:focus {
+    outline: 2px dashed var(--secondary-color);
+    outline-offset: 4px;
 }
